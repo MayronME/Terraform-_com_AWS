@@ -94,3 +94,6 @@ resource "aws_dynamodb_table" "dynamodb-homologacao" {
   }
 
 }
+
+# para excluir apenas um recursos 
+# terraform destroy -taget aws_instance.dev4
