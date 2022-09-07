@@ -16,7 +16,7 @@ resource "aws_instance" "dev" {
   count         = 3
   ami           = var.amis["us-east-1"] # nome na aws que define o tipo de maquina
   instance_type = "t2.micro"              # tipo de maquina
-  key_name      = "terraform-aws"         # 
+  key_name      = var.key_name         # 
   tags = {
     Name = "dev"
     Name = "dev${count.index}"
@@ -31,7 +31,7 @@ resource "aws_instance" "dev4" {
   provider = aws.us-east-1
   ami           = var.amis["us-east-1"]
   instance_type = "t2.micro"
-  key_name      = "terraform-aws"
+  key_name      = var.key_name
   tags = {
     Name = "dev"
     Name = "dev4"
@@ -49,7 +49,7 @@ resource "aws_instance" "dev6" {
   provider = aws.us-east-2
   ami           = var.amis["us-east-2"]
   instance_type = "t2.micro"
-  key_name      = "terraform-aws"
+  key_name      = var.key_name
   tags = {
     Name = "dev"
     Name = "dev6"
